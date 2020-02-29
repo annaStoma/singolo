@@ -27,6 +27,10 @@ body {
     color: #666d89;
 }
 
+.wrapper:hover {
+    cursor: default;
+}
+
 .portfolio {
     margin: auto;
     width: 100%;
@@ -56,12 +60,22 @@ body {
 
 .portfolio__text {
     margin-top: 25px;
-    letter-spacing: -0.25px;
     text-align: justify;
     font-family: 'Lato-Light';
     font-size: 18px;
     padding-left: 40px;
     padding-right: 40px;
+    letter-spacing: 0.19px;
+    word-spacing: -2.6px;
+}
+
+.button:first-child {
+    color: #c5c5c5;
+    border-color: #c5c5c5;
+}
+
+.image:nth-child(n+13) {
+    display: none;
 }
 
 .portfolio__buttons {
@@ -126,18 +140,14 @@ body {
 .about__text {
     padding-left: 40px;
     padding-right: 40px;
-    margin-top: 21px;
-    letter-spacing: -0.1px;
-    line-height: 1.6;
+    margin-top: 20px;
+    text-align: justify;
+    line-height: 1.65;
+    width: 940px;
+    height: max-content;
+    letter-spacing: 0.19px;
+    word-spacing: -2.7px;
 }
-
-
-/* 
-кстати, по поводу ограничения количества блоков в портфолио. есть нормальный способ: 
-
-. children:nth-child(n+13){
-  display:none;
-} */
 
 .about-cards {
     padding-left: 39px;
@@ -145,7 +155,7 @@ body {
     display: flex;
     /* border: 1px solid red; */
     justify-content: space-between;
-    margin-top: 45.5px;
+    margin-top: 45px;
 }
 
 .card {
@@ -167,14 +177,25 @@ body {
     font-family: 'Lato-Black';
     font-size: 18px;
     margin-top: 13px;
+    text-align: justify;
+    letter-spacing: -0.2px;
+    word-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 300px;
 }
 
 .card-text {
     font-family: 'Lato-Regular';
     font-size: 12px;
-    line-height: 1.8;
     margin-top: -10px;
-    letter-spacing: -0.2px;
+    width: 300px;
+    hyphens: auto;
+    Line-height: 1.8;
+    text-align: justify;
+    word-spacing: -2px;
+    letter-spacing: 0.16px;
 }
 
 .card-social {
@@ -183,4 +204,9 @@ body {
     width: 152px;
     display: flex;
     justify-content: space-between;
+}
+
+.social:hover {
+    cursor: pointer;
+    filter: sepia(31%) brightness(99%) saturate(462%) invert(100%);
 }
