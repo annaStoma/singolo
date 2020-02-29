@@ -1,0 +1,211 @@
+@font-face {
+    font-family: Lato-Bold;
+    src: url("./assets/fonts/Lato-Bold.ttf")
+}
+
+@font-face {
+    font-family: Lato-Black;
+    src: url("./assets/fonts/Lato-Black.ttf")
+}
+
+@font-face {
+    font-family: Lato-Light;
+    src: url("./assets/fonts/Lato-Light.ttf")
+}
+
+@font-face {
+    font-family: Lato-Regular;
+    src: url("./assets/fonts/Lato-Regular.ttf")
+}
+
+body {
+    width: 100%;
+}
+
+.wrapper-part-3 {
+    height: 730px;
+    color: #f0d8d9;
+}
+
+.wrapper-part-3:hover {
+    cursor: default;
+}
+
+.quote {
+    height: 648px;
+    background-color: #f06c64;
+    border-bottom: 6px solid #ea676b;
+}
+
+.quote__content {
+    width: 1020px;
+    height: 100%;
+    background-color: #f06c64;
+    margin: auto;
+    border-bottom: 6px solid #ea676b;
+}
+
+.quote-title {
+    font-family: 'Lato-Black';
+    font-size: 30px;
+    padding-left: 40px;
+    padding-top: 60px;
+    letter-spacing: -0.16px;
+}
+
+.quote-text {
+    margin-top: 20px;
+    text-align: justify;
+    font-family: 'Lato-Light';
+    font-size: 18px;
+    padding-left: 40px;
+    padding-right: 40px;
+    letter-spacing: 0.19px;
+    word-spacing: -2.6px;
+    line-height: 1.65;
+}
+
+.form-contacts-wrapper {
+    margin: auto;
+    display: flex;
+    width: 940px;
+    margin-top: 27px;
+    justify-content: space-between;
+}
+
+.get-quote-form {
+    display: flex;
+    flex-direction: column;
+    width: 620px;
+}
+
+.input {
+    margin-top: 16px;
+    height: 38px;
+    padding: 0;
+    border-radius: 4px;
+    border: none;
+    background-color: #d6564f;
+    outline: none;
+    padding-left: 15px;
+    font-family: 'Lato-Regular';
+    font-size: 12px;
+    color: #ee8284;
+}
+
+.input::placeholder {
+    font-size: 12px;
+    color: #ee8284;
+    font-family: 'Lato-Regular';
+    margin-left: 20px;
+}
+
+.describe-input {
+    height: 190px;
+    resize: none;
+}
+
+.describe-input {
+    padding-top: 12px;
+}
+
+.submit {
+    background-color: #f0d8d9;
+    width: 30%;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.submit:hover {
+    cursor: pointer;
+    background-color: #d6564f;
+    color: #f0d8d9;
+    transition: 0.5s;
+}
+
+.contacts {
+    width: 300px;
+}
+
+.contact-title {
+    font-size: 18px;
+    font-family: 'Lato-Black';
+    margin-top: 15px;
+}
+
+.contact-text {
+    font-family: 'Lato-Regular';
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: justify;
+    line-height: 1.75;
+    word-spacing: -2.7px;
+}
+
+.contact-location,
+.contact-phone,
+.contact-mail {
+    margin-top: 8px;
+    text-align: justify;
+    letter-spacing: 0.1px;
+    word-spacing: -1.7px;
+}
+
+.contact-phone {
+    margin-left: -8px;
+}
+
+.contact-mail {
+    margin-left: -9px;
+    word-spacing: -3px;
+    letter-spacing: 0.02px;
+}
+
+.contact-info>div>img {
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+.contact-info {
+    text-align: justify;
+    font-family: 'Lato-Regular';
+    font-size: 12px;
+    margin-top: 28px;
+}
+
+footer {
+    background-color: #2d303a;
+    height: 76px;
+    padding-bottom: 0px;
+}
+
+.footer__content {
+    width: 1020px;
+    height: 100%;
+    background-color: #2d303a;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-social {
+    margin-left: 1px;
+    margin-right: 40px;
+    width: 152px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social:hover {
+    cursor: pointer;
+    filter: sepia(31%) brightness(99%) saturate(462%) invert(100%);
+}
+
+.copyright {
+    font-family: 'Lato-Regular';
+    font-size: 12px;
+    color: #666d89;
+    margin-left: 41px;
+    letter-spacing: -0.1px;
+}

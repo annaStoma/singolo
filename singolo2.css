@@ -22,12 +22,12 @@ body {
     width: 100%;
 }
 
-.wrapper {
+.wrapper-part-2 {
     height: 1604px;
     color: #666d89;
 }
 
-.wrapper:hover {
+.wrapper-part-2:hover {
     cursor: default;
 }
 
