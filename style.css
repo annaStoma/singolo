@@ -281,6 +281,8 @@ p {
     text-align: justify;
     word-spacing: -2px;
     letter-spacing: 0.16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .service-star>.service-title {
@@ -447,18 +449,6 @@ body {
     word-spacing: -2.7px;
 }
 
-.about-cards {
-    padding-left: 39px;
-    padding-right: 40px;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 44px;
-}
-
-.card {
-    width: 300px;
-}
-
 .about__title {
     font-family: 'Lato-Black';
     font-size: 30px;
@@ -467,6 +457,18 @@ body {
 .about__text {
     font-family: 'Lato-Light';
     font-size: 18px;
+}
+
+.about-cards {
+    padding-left: 39px;
+    padding-right: 40px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+}
+
+.card {
+    width: 300px;
 }
 
 .card-name {
@@ -492,6 +494,8 @@ body {
     text-align: justify;
     word-spacing: -2px;
     letter-spacing: 0.16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card-social {
@@ -566,10 +570,10 @@ body {
 }
 
 .input {
-    margin-top: 15px;
+    margin-top: 15.8px;
     height: 38px;
     padding: 0;
-    border-radius: 4px;
+    border-radius: 6px;
     border: none;
     background-color: #d6564f;
     outline: none;
@@ -590,13 +594,14 @@ body {
     height: 190px;
     resize: none;
 }
-.subject-input{
-  margin-top: 16px;
-}
 
 .describe-input {
     padding-top: 12px;
-    margin-top: 16px;
+    /* margin-top: 16px; */
+}
+
+.subject-input {
+    /* margin-top: 18px; */
 }
 
 .submit {
@@ -615,13 +620,13 @@ body {
 
 .contacts {
     width: 300px;
+    margin-top: 0.5px;
 }
 
 .contact-title {
     font-size: 18px;
     font-family: 'Lato-Black';
-    margin-top: 13.7px;
-    text-align: justify;
+    margin-top: 13.6px;
     letter-spacing: 0.1px;
 }
 
@@ -629,8 +634,8 @@ body {
     width: 300px;
     font-family: 'Lato-Regular';
     font-size: 12px;
-    margin-top: 10px;
-    line-height: 1.8;
+    margin-top: -10px;
+    line-height: 22px;
     text-align: justify;
     word-spacing: -0.5px;
 }
@@ -644,11 +649,10 @@ body {
 .contact-info {
     font-family: 'Lato-Regular';
     font-size: 12px;
-    margin-top: 25px;
+    margin-top: 24px;
+    line-height: 15px;
     word-spacing: -1px;
-    line-height: 1.15;
     letter-spacing: 0.04px;
-    text-align: justify;
     margin-left: 1px;
 }
 
@@ -663,13 +667,15 @@ body {
     word-spacing: -3px;
     letter-spacing: 0.02px;
 }
+
 .mail-address,
-.phone-number{
+.phone-number {
     text-decoration: none;
     color: #f0d8d9;
 }
+
 .mail-address:hover,
-.phone-number:hover{
+.phone-number:hover {
     color: #f0d8d9;
 }
 
