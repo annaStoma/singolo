@@ -154,7 +154,7 @@
                 <p class="quote-text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                 <div class="form-contacts-wrapper">
                     <form class="get-quote-form">
-                        <input type="text" required class="input name-input" placeholder="Name (Required)">
+                        <input type="text" maxlength="30" pattern="[A-Za-zА-яа-я]{1,30}" title="Имя может содержать только латинские буквы. Максимальная длина 30 символов" required class="input name-input" placeholder="Name (Required)">
                         <input type="email" required class="input email-input" placeholder="Email (Required)">
                         <input type="text" class="input subject-input" placeholder="Subject">
                         <textarea class="input describe-input" placeholder="Describe your project in detail..."></textarea>
