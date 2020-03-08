@@ -54,6 +54,7 @@ body:hover {
     font-size: 25px;
     text-transform: uppercase;
     margin-left: 40px;
+    padding-bottom: 1.5px;
     letter-spacing: -0.7px;
 }
 
@@ -444,20 +445,37 @@ body {
 .card {
     width: 300px;
 }
-.card-img{
+
+.card-img {
     /* margin-top: -1px; */
 }
+
 .card-name {
     font-family: 'Lato-Black';
     font-size: 18px;
     margin-top: 12px;
     text-align: justify;
-    letter-spacing: -0.2px;
+    letter-spacing: -0.3px;
     word-spacing: 1px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 300px;
+}
+
+.card-1>.card-name {
+    letter-spacing: -0.1px;
+}
+
+.card-2>.card-name {
+    letter-spacing: -0.1px;
+    word-spacing: -1px;
+    margin-left: -1px;
+}
+
+.card-3>.card-name {
+    letter-spacing: -0.01px;
+    margin-left: -1px;
 }
 
 .card-text {
