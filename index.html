@@ -8,38 +8,52 @@
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
     <title>singolo</title>
 </head>
-
 <body>
+    <section class="modal-window display-none" id="modal-window" onclick="closeModal(event)">
+        <div class="modal-submit" id="modal-submit">
+            <div class="modal-button" id='modal-button'>
+                <button>ok</button>
+             </div>
+        </div>
+    </section>
     <div class="content">
         <header class="navigation">
             <div class="navigation__content">
                 <h1 class="navigation__logo">singolo<span class="logo-star">*</span></h1>
-                <nav class="navigation__links">
+                <nav id="navigation" class="navigation__links">
                     <a class="link-active">home</a>
-                    <a>services</a>
-                    <a>portfolio</a>
-                    <a>about</a>
-                    <a>contact</a>
+                    <a href="#services">services</a>
+                    <a href="#portfolio">portfolio</a>
+                    <a href="#about">about</a>
+                    <a href="#contact">contact</a>
                 </nav>
             </div>
         </header>
-        <section class="slider">
-            <div class="slider-content">
-                <img src="./assets/img/Screen1.png" class="slider__img img-one">
-                <img src="./assets/img/Screen2.png" class="slider__img img-two">
-                <img src="./assets/img/Cam.png" class="slider__phone phone-one">
-                <img src="./assets/img/Shadow.png" class="slider__shadow shadow-one">
-                <img src="./assets/img/Cam.png" class="slider__phone phone-two">
-                <img src="./assets/img/Shadow.png" class="slider__shadow shadow-two">
-                <img src="./assets/img/left.png" class="slider__arrow arrow-left">
-                <img src="./assets/img/right.png" class="slider__arrow arrow-right">
+        <section class="slider" id='slider-section'>
+            <div class="slider-content" id='slides'>
+                <div class="slide slide-1 showing">
+                    <img src="./assets/img/Screen1.png" class="slider__img img-one" onclick="delWallpapaer()">
+                    <img src="./assets/img/Screen2.png" class="slider__img img-two" onclick="delWallpapaer()">
+                    <img src="./assets/img/Cam.png" class="slider__phone phone-one">
+                    <img src="./assets/img/Shadow.png" class="slider__shadow shadow-one">
+                    <img src="./assets/img/Cam.png" class="slider__phone phone-two">
+                    <img src="./assets/img/Shadow.png" class="slider__shadow shadow-two">
+                </div>
 
+                <div class="slide blue">
+                    <img class="slide-2 blue" src="./assets/img/Slide-2.png">
+                </div>
+
+                <div class="arrows">
+                    <img src="./assets/img/svg/arrow-left.svg" class="slider__arrow arrow-left" onclick="slider()">
+                    <img src="./assets/img/svg/arrow-right.svg" onclick="slider()" class="slider__arrow arrow-right">
+                </div>
             </div>
         </section>
-        <section class="our-services">
+        <section class="our-services" id="services">
             <div class="our-services__content">
                 <p class="our-services__title">Our Services</p>
-                <p class="our-services__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+                <p class="our-services__text">Fusce dapibus, tellus /ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                 <div class="our-services__service">
                     <div class="service service-design">
                         <img class="service-icon" src="./assets/img/pen.png">
@@ -77,17 +91,17 @@
         <section class="line"></section>
     </div>
     <div class="wrapper-part-2">
-        <section class="portfolio">
+        <section class="portfolio" id="portfolio">
             <div class="portfolio__content">
                 <div class="portfolio__title">Portfolio</div>
                 <div class="portfolio__text">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</div>
-                <div class="portfolio__buttons">
-                    <span class="button button-all">All</span>
+                <div class="portfolio__buttons" id="portfolio__buttons" onclick="randomImages(event)">
+                    <span class="button button-all button-active">All</span>
                     <span class="button button-web">Web Design</span>
                     <span class="button button-graphic">Graphic Design</span>
                     <span class="button button-artwork">Artwork</span>
                 </div>
-                <div class="portfolio__images">
+                <div class="portfolio__images" id="portfolio__images">
                     <img class="image" src="./assets/img/portfolio/image1.png">
                     <img class="image" src="./assets/img/portfolio/image2.png">
                     <img class="image" src="./assets/img/portfolio/image3.png">
@@ -103,7 +117,7 @@
                 </div>
             </div>
         </section>
-        <section class="about">
+        <section class="about" id="about">
             <div class="about__content">
                 <div class="about__title">About Us</div>
                 <div class="about__text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</div>
@@ -148,17 +162,21 @@
         </section>
     </div>
     <div class="wrapper-part-3">
-        <section class="quote">
+        <section class="quote" id="contact">
             <div class="quote__content">
                 <div class="quote-title">Get a Quote</div>
                 <p class="quote-text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                 <div class="form-contacts-wrapper">
-                    <form class="get-quote-form">
-                        <input type="text" maxlength="30" pattern="[A-Za-zА-яа-я]{1,30}" title="Имя может содержать только латинские буквы. Максимальная длина 30 символов" required class="input name-input" placeholder="Name (Required)">
-                        <input type="email" required class="input email-input" placeholder="Email (Required)">
-                        <input type="text" class="input subject-input" placeholder="Subject">
-                        <textarea class="input describe-input" placeholder="Describe your project in detail..."></textarea>
-                        <input type="submit" class="input submit" value="submit">
+                    <form class="get-quote-form" id="form">
+
+                        <input id='name' type="text" maxlength="30" pattern="[A-Za-zА-яа-я]{1,30}" title="Имя может содержать только латинские буквы. Максимальная длина 30 символов" required class="input name-input" placeholder="Name (Required)">
+
+                        <input id='email' type="email" required class="input email-input" placeholder="Email (Required)">
+
+                        <input id='text' type="text" class="input subject-input" placeholder="Subject">
+
+                        <textarea id='descr' class="input describe-input" placeholder="Describe your project in detail..."></textarea>
+                        <button type="button" class="input submit" onclick='getLetter()'>submit</button>
                     </form>
                     <div class="contacts">
                         <h3 class="contact-title">Contact Information</h3>
@@ -187,6 +205,7 @@
             </div>
         </footer>
     </div>
+    <script src="./script.js"></script>
 </body>
 
 </html>
