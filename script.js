@@ -2,10 +2,12 @@
 const NAVIGATION = document.getElementById('navigation');
 
 NAVIGATION.addEventListener('click', (event) => {
-    NAVIGATION.querySelectorAll('a').forEach(item => {
-        item.classList.remove('link-active');
-    });
-    event.target.classList.add('link-active');
+    if (event.target.tagName == 'span') {
+        NAVIGATION.querySelectorAll('span').forEach(item => {
+            item.classList.remove('link-active');
+        });
+        event.target.classList.add('link-active');
+    }
 })
 
 // anchors scroll
@@ -143,15 +145,15 @@ const closeModal = (event) => {
 FORM.addEventListener('submit', event => {
     event.preventDefault();
     if (NAME_INPUT.checkValidity() && EMAIL_INPUT.checkValidity()) {
-        MODAL_SUBMIT.innerHTML += "<div class='added'>The letter was sent.</div>";
+        MODAL_SUBMIT.innerHTML += "<div class='added'>The letter was sent</div>";
         if (TEXT_INPUT.value.length == 0)
-            MODAL_SUBMIT.innerHTML += "<div class='added'>Without subject.</div>";
+            MODAL_SUBMIT.innerHTML += "<div class='added'>Without subject</div>";
         else
-            MODAL_SUBMIT.innerHTML += `<div class='added'>Subject:<span class='bold'> ${TEXT_INPUT.value}.</span></div>`;
+            MODAL_SUBMIT.innerHTML += `<div class='added'>Subject:<span class='bold'> ${TEXT_INPUT.value}</span></div>`;
         if (DESCR_INPUT.value.length == 0)
-            MODAL_SUBMIT.innerHTML += "<div class='added'>Without description.</div>";
+            MODAL_SUBMIT.innerHTML += "<div class='added'>Without description</div>";
         else
-            MODAL_SUBMIT.innerHTML += `<div class='added'>Description:<span class='bold'> ${DESCR_INPUT.value}.</span></div>`;
+            MODAL_SUBMIT.innerHTML += `<div class='added'>Description:<span class='bold'> ${DESCR_INPUT.value}</span></div>`;
         MODAL_SUBMIT.innerHTML += `<div style="text-align: center;" class="modal-button added" id='modal-button'><button>ok</button></div>`;
         MODAL_WINDOW.classList.remove('display-none');
     }
