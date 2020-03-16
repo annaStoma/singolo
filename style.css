@@ -74,6 +74,7 @@ body:hover {
 }
 
 .navigation__links>a::before {
+    pointer-events: none;
     content: ".";
     color: #494e62;
     position: absolute;
