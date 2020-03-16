@@ -2,7 +2,6 @@
 const NAVIGATION = document.getElementById('navigation');
 
 NAVIGATION.addEventListener('click', (event) => {
-    console.log(event.target.tagName)
     if (event.target.tagName == 'SPAN') {
         NAVIGATION.querySelectorAll('span').forEach(item => {
             item.classList.remove('link-active');

@@ -615,6 +615,7 @@ body {
     padding-left: 15px;
     font-family: 'Lato-Regular';
     font-size: 12px;
+    padding-right: 20px;
     color: #ee8284;
 }
 
@@ -636,6 +637,7 @@ input:invalid:focus {
 
 .describe-input {
     padding-top: 12px;
+    padding-right: 20px;
 }
 
 .submit {
@@ -801,6 +803,10 @@ footer {
 }
 .added{
      text-align: left;
+     word-wrap: break-word;
+     overflow: hidden;
+     text-overflow: ellipsis; 
+     max-height: 200px; 
 }
 .bold{
     font-weight: bold;
