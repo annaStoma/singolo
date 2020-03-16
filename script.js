@@ -44,16 +44,22 @@ const slider = () => {
 }
 
 // lock phone
-const PHONE_WALLPAPER = document.getElementsByClassName('slider__img');
-const delWallpapaer = () => {
-    let elem = this.event.target;
-    if (elem.classList.contains('none'))
-        elem.classList.remove('none')
+const PHONE_WALLPAPER_ONE = document.getElementById('slider__img-one');
+const PHONE_WALLPAPER_TWO = document.getElementById('slider__img-two');
+const delWallpaperOne = () => {
+    if (PHONE_WALLPAPER_ONE.classList.contains('none'))
+        PHONE_WALLPAPER_ONE.classList.remove('none')
     else
-        elem.classList.add('none');
+        PHONE_WALLPAPER_ONE.classList.add('none');
+}
+const delWallpaperTwo = () => {
+    if (PHONE_WALLPAPER_TWO.classList.contains('none'))
+        PHONE_WALLPAPER_TWO.classList.remove('none')
+    else
+        PHONE_WALLPAPER_TWO.classList.add('none');
 }
 
-// portfolia navigation
+// portfolio navigation
 NAVIGATION.addEventListener('click', (event) => {
     NAVIGATION.querySelectorAll('a').forEach(item => {
         item.classList.remove('link-active');
@@ -75,17 +81,28 @@ const randomImages = (event) => {
         target.classList.add('button-active');
 
         let srcArray = [];
+        let counter = 0;
         PORTFOLIO_IMAGES.querySelectorAll('img').forEach(item => {
             srcArray.push(item.src);
+            counter++;
             item.src = '';
         })
 
-        let randArray = srcArray.sort(function() {
-            return Math.random() - 0.5;
-        });
-
+        function random(size) {
+            let array = new Array(size).fill(0).map((item, i) => i);
+            for (let i = array.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * i);
+                let tmp = array[i];
+                array[i] = array[j];
+                array[j] = tmp;
+            }
+            return array;
+        }
+        let randArray = random(counter);
+        console.log(randArray)
         PORTFOLIO_IMAGES.querySelectorAll('img').forEach((item, index) => {
-            item.src = randArray[index];
+            item.src = srcArray[randArray[index]];
+            item.style.boxShadow = "none";
         })
     }
 }
@@ -97,8 +114,9 @@ PORTFOLIO_IMAGES.addEventListener('click', event => {
         PORTFOLIO_IMAGES.querySelectorAll('img').forEach(item => {
             item.style.boxShadow = "none";
         });
-        event.target.style.boxShadow = "0px 0px 0px 2px rgba(255,0,0,1)";
+        event.target.style.boxShadow = "0px 0px 0px 5px #F06C64";
     }
+
 })
 
 //modal window
@@ -115,50 +133,26 @@ const DESCR_INPUT = document.getElementById('descr');
 const closeModal = (event) => {
     if (event.target.tagName == "SECTION" || event.target.tagName == "BUTTON") {
         MODAL_WINDOW.classList.add('display-none');
-        let added = document.getElementById('added');
-        MODAL_SUBMIT.removeChild(added);
+        MODAL_SUBMIT.querySelectorAll(".added").forEach(item => {
+            MODAL_SUBMIT.removeChild(item);
+        })
         FORM.reset();
     }
 }
 
-const getLetter = () => {
-    if (NAME_INPUT.checkValidity() && EMAIL_INPUT.checkValidity() && TEXT_INPUT.value.length > 0 && DESCR_INPUT.value.length > 0) {
-        MODAL_SUBMIT.innerHTML += "<div id='added'>Верно</div>";
-        MODAL_WINDOW.classList.remove('display-none');
-    } else if (NAME_INPUT.value.length == 0 || EMAIL_INPUT.value.length == 0) {
-        MODAL_SUBMIT.innerHTML += "<div id='added'>Обязательные поля должны быть заполнены</div>";
-        MODAL_WINDOW.classList.remove('display-none');
-
-    } else if (!NAME_INPUT.checkValidity()) {
-        MODAL_SUBMIT.innerHTML += "<div id='added'>имя введено некоректно</div>";
-        MODAL_WINDOW.classList.remove('display-none');
-
-    } else if (!EMAIL_INPUT.checkValidity()) {
-        MODAL_SUBMIT.innerHTML += "<div id='added'>емайл введен некоректно</div>";
-        MODAL_WINDOW.classList.remove('display-none');
-
-    } else if (TEXT_INPUT.value.length == 0 && DESCR_INPUT.value.length == 0) {
-        MODAL_SUBMIT.innerHTML += "<div id='added'>Заполните либо оба, либо одно из оставшихся полей</div>";
-        MODAL_WINDOW.classList.remove('display-none');
-
-    } else if (TEXT_INPUT.value.length == 0 && DESCR_INPUT.value.length == 0) {
-        MODAL_SUBMIT.innerHTML += "<div id='added'>Без темы и без описания</div>";
-        MODAL_WINDOW.classList.remove('display-none');
-
-    } else if (TEXT_INPUT.value.length == 0) {
-        MODAL_SUBMIT.innerHTML += "<div id='added'>Без темы</div>";
-        MODAL_WINDOW.classList.remove('display-none');
-
-    } else if (TEXT_INPUT.value == 'Singolo') {
-        MODAL_SUBMIT.innerHTML += "<div id='added'>Тема: Singolo</div>";
-        MODAL_WINDOW.classList.remove('display-none');
-
-    } else if (DESCR_INPUT.value.length == 0) {
-        MODAL_SUBMIT.innerHTML += "<div id='added'>Без описания</div>";
-        MODAL_WINDOW.classList.remove('display-none');
-
-    } else if (DESCR_INPUT.value == 'Portfolio project') {
-        MODAL_SUBMIT.innerHTML += "<div id='added'>Тема: Portfolio project</div>";
+FORM.addEventListener('submit', event => {
+    event.preventDefault();
+    if (NAME_INPUT.checkValidity() && EMAIL_INPUT.checkValidity()) {
+        MODAL_SUBMIT.innerHTML += "<div class='added'>The letter was sent.</div>";
+        if (TEXT_INPUT.value.length == 0)
+            MODAL_SUBMIT.innerHTML += "<div class='added'>Without subject.</div>";
+        else
+            MODAL_SUBMIT.innerHTML += `<div class='added'>Subject:<span class='bold'> ${TEXT_INPUT.value}.</span></div>`;
+        if (DESCR_INPUT.value.length == 0)
+            MODAL_SUBMIT.innerHTML += "<div class='added'>Without description.</div>";
+        else
+            MODAL_SUBMIT.innerHTML += `<div class='added'>Description:<span class='bold'> ${DESCR_INPUT.value}.</span></div>`;
+        MODAL_SUBMIT.innerHTML += `<div style="text-align: center;" class="modal-button added" id='modal-button'><button>ok</button></div>`;
         MODAL_WINDOW.classList.remove('display-none');
     }
-}
+})

@@ -26,6 +26,7 @@ body:hover {
     cursor: default;
 }
 
+
 .content {
     margin: auto;
     height: 1195px;
@@ -147,15 +148,26 @@ a:hover {
     z-index: 1;
 }
 
-.slider__img:hover {
-    cursor: pointer;
-}
-
 .phone-one {
     top: 53px;
     left: 112px;
 }
-
+.button-one{
+    /* border: 1px solid red; */
+    position: absolute;
+    left: 198px;
+    top: 460px;
+    z-index: 2;
+}
+.slider__button:hover{
+    cursor: pointer;
+}
+.button-two{
+    position: absolute;
+    left: 433px;
+    top: 260px;
+    z-index: 2;
+}
 .phone-two {
     transform: rotate(90deg);
     top: 52px;
@@ -776,11 +788,20 @@ footer {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    padding-bottom: 10px;
+    font-size: 16px;
 }
 
 .modal-submit>div {
     font-family: 'Lato-Light';
     margin-top: 10px;
+   
+}
+.added{
+     text-align: left;
+}
+.bold{
+    font-weight: bold;
 }
 
 .modal-button {
@@ -792,6 +813,7 @@ footer {
     width: 40px;
     height: 30px;
     color: white;
+    /* text-align: center; */
     border-radius: 3px;
     background-color: rgb(48, 28, 78);
 }

@@ -8,12 +8,10 @@
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
     <title>singolo</title>
 </head>
+
 <body>
     <section class="modal-window display-none" id="modal-window" onclick="closeModal(event)">
         <div class="modal-submit" id="modal-submit">
-            <div class="modal-button" id='modal-button'>
-                <button>ok</button>
-             </div>
         </div>
     </section>
     <div class="content">
@@ -32,8 +30,10 @@
         <section class="slider" id='slider-section'>
             <div class="slider-content" id='slides'>
                 <div class="slide slide-1 showing">
-                    <img src="./assets/img/Screen1.png" class="slider__img img-one" onclick="delWallpapaer()">
-                    <img src="./assets/img/Screen2.png" class="slider__img img-two" onclick="delWallpapaer()">
+                    <img src="./assets/img/Screen1.png" class="slider__img img-one" id="slider__img-one">
+                    <img src="./assets/img/Screen2.png" class="slider__img img-two" id="slider__img-two">
+                    <img src="./assets/img/Home-Button.png" class="slider__button button-one" onclick="delWallpaperOne()">
+                    <img src="./assets/img/Home-Button.png" class="slider__button button-two" onclick="delWallpaperTwo()">
                     <img src="./assets/img/Cam.png" class="slider__phone phone-one">
                     <img src="./assets/img/Shadow.png" class="slider__shadow shadow-one">
                     <img src="./assets/img/Cam.png" class="slider__phone phone-two">
@@ -169,14 +169,14 @@
                 <div class="form-contacts-wrapper">
                     <form class="get-quote-form" id="form">
 
-                        <input id='name' type="text" maxlength="30" pattern="[A-Za-zА-яа-я]{1,30}" title="Имя может содержать только латинские буквы. Максимальная длина 30 символов" required class="input name-input" placeholder="Name (Required)">
+                        <input id='name' type="text" maxlength="30" pattern="[A-Za-zА-яа-я-\s']{1,30}" title="Имя может содержать только латинские буквы, пробелы, девисы и символ апострофа. Максимальная длина 30 символов" required class="input name-input" placeholder="Name (Required)">
 
                         <input id='email' type="email" required class="input email-input" placeholder="Email (Required)">
 
                         <input id='text' type="text" class="input subject-input" placeholder="Subject">
 
                         <textarea id='descr' class="input describe-input" placeholder="Describe your project in detail..."></textarea>
-                        <button type="button" class="input submit" onclick='getLetter()'>submit</button>
+                        <button type="submit" value="Submit" class="input submit">submit</button>
                     </form>
                     <div class="contacts">
                         <h3 class="contact-title">Contact Information</h3>
