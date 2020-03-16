@@ -143,6 +143,9 @@ const closeModal = (event) => {
 }
 
 FORM.addEventListener('submit', event => {
+    if (event.keyCode == 13) {
+        event.preventDefault();
+    }
     event.preventDefault();
     if (NAME_INPUT.checkValidity() && EMAIL_INPUT.checkValidity()) {
         MODAL_SUBMIT.innerHTML += "<div class='added'>The letter was sent</div>";
@@ -158,3 +161,9 @@ FORM.addEventListener('submit', event => {
         MODAL_WINDOW.classList.remove('display-none');
     }
 })
+
+FORM.addEventListener('keydown', function(event) {
+    if (event.keyCode == 13) {
+        event.preventDefault();
+    }
+});
