@@ -1,11 +1,20 @@
 // navigation active
 const NAVIGATION = document.getElementById('navigation');
+const HOME_SECTION = document.getElementById('header');
+const SERVICES_SECTION = document.getElementById('services');
+const PORTFOLIO_SECTION = document.getElementById('portfolio');
+const ABOUT_SECTION = document.getElementById('about');
+const CONTACTS_SECTION = document.getElementById('contact');
+
+const removeLinkActive = () => {
+    NAVIGATION.querySelectorAll('span').forEach(item => {
+        item.classList.remove('link-active');
+    });
+}
 
 NAVIGATION.addEventListener('click', (event) => {
     if (event.target.tagName == 'SPAN') {
-        NAVIGATION.querySelectorAll('span').forEach(item => {
-            item.classList.remove('link-active');
-        });
+        removeLinkActive();
         event.target.classList.add('link-active');
     }
 })
@@ -23,6 +32,34 @@ for (let anchor of ANCHORS) {
         })
     })
 }
+
+// change active link with scrolling
+window.addEventListener('scroll', () => {
+    if (window.scrollY < SERVICES_SECTION.offsetTop - HOME_SECTION.offsetHeight) {
+        removeLinkActive();
+        document.getElementById('home_link').classList.add('link-active');
+    }
+    if (window.scrollY >= SERVICES_SECTION.offsetTop - HOME_SECTION.offsetHeight && window.scrollY < PORTFOLIO_SECTION.offsetTop - HOME_SECTION.offsetHeight) {
+        removeLinkActive();
+        document.getElementById('services_link').classList.add('link-active');
+    }
+    if (window.scrollY >= PORTFOLIO_SECTION.offsetTop - HOME_SECTION.offsetHeight) {
+        removeLinkActive();
+        document.getElementById('portfolio_link').classList.add('link-active');
+    }
+    if (window.scrollY >= ABOUT_SECTION.offsetTop - HOME_SECTION.offsetHeight) {
+        removeLinkActive();
+        document.getElementById('about_link').classList.add('link-active');
+    }
+    if (window.scrollY >= CONTACTS_SECTION.offsetTop - HOME_SECTION.offsetHeight) {
+        removeLinkActive();
+        document.getElementById('contact_link').classList.add('link-active');
+    }
+    if (window.scrollY + 1 >= document.documentElement.scrollHeight - document.documentElement.clientHeight) {
+        removeLinkActive();
+        document.getElementById('contact_link').classList.add('link-active');
+    }
+});
 
 // slider
 const SLIDES = document.querySelectorAll('#slides .slide');
@@ -151,12 +188,16 @@ FORM.addEventListener('submit', event => {
         MODAL_SUBMIT.innerHTML += "<div class='added'>The letter was sent</div>";
         if (TEXT_INPUT.value.length == 0)
             MODAL_SUBMIT.innerHTML += "<div class='added'>Without subject</div>";
-        else
-            MODAL_SUBMIT.innerHTML += `<div class='added'>Subject:<span class='bold'> ${TEXT_INPUT.value}</span></div>`;
+        else {
+            let VALUE = TEXT_INPUT.value.split('').map(item => { if (item == '<') item = '&lt;'; if (item == '>') item = '&gt;'; return item }).join('');
+            MODAL_SUBMIT.innerHTML += `<div class='added'>Subject:<span class='bold'> ${VALUE} </span></div>`;
+        }
         if (DESCR_INPUT.value.length == 0)
             MODAL_SUBMIT.innerHTML += "<div class='added'>Without description</div>";
-        else
-            MODAL_SUBMIT.innerHTML += `<div class='added'>Description:<span class='bold'> ${DESCR_INPUT.value}</span></div>`;
+        else {
+            let VALUE = DESCR_INPUT.value.split('').map(item => { if (item == '<') item = '&lt;'; if (item == '>') item = '&gt;'; return item }).join('');
+            MODAL_SUBMIT.innerHTML += `<div class='added'>Description:<span class='bold'> ${VALUE} </span></div>`;
+        }
         MODAL_SUBMIT.innerHTML += `<div style="text-align: center;" class="modal-button added" id='modal-button'><button>ok</button></div>`;
         MODAL_WINDOW.classList.remove('display-none');
     }

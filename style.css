@@ -35,6 +35,9 @@ body:hover {
 .navigation {
     height: 89px;
     margin: auto;
+    position: fixed;
+    width: 100%;
+    z-index: 300;
     background-color: #2d303a;
     border-bottom: 6px solid #323746;
 }
@@ -113,6 +116,7 @@ a:hover {
     height: 594px;
     background-color: #f06c64;
     border-bottom: 6px solid #ea676b;
+    padding-top: 95px;
 }
 
 .slider-content {
