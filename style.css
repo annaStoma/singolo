@@ -26,7 +26,6 @@ body:hover {
     cursor: default;
 }
 
-
 .content {
     margin: auto;
     height: 1195px;
@@ -109,7 +108,6 @@ a:hover {
     cursor: pointer;
 }
 
-
 /* ---------------------------------------------- */
 
 .slider {
@@ -117,6 +115,8 @@ a:hover {
     background-color: #f06c64;
     border-bottom: 6px solid #ea676b;
     padding-top: 95px;
+    transition: all ease 0.5s;
+    user-select: none;
 }
 
 .slider-content {
@@ -124,29 +124,49 @@ a:hover {
     width: 1020px;
     height: inherit;
     margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.none {
-    filter: brightness(0) opacity(1) drop-shadow(0 0 0 rgb(0, 0, 0));
+    overflow: hidden;
 }
 
 .slide {
-    opacity: 0;
-    z-index: 1;
-    padding-top: 10px;
+    width: 1020px;
+    position: absolute;
+    transition: all ease 1s;
+    box-shadow: 0 0 8px 8px white inset;
+}
+
+.slide-1 {
+    height: 594px;
+    background-color: turquoise;
 }
 
 .slide-2 {
     height: 594px;
+    width: 1020px;
 }
 
-.showing {
-    opacity: 1;
-    z-index: 2;
+.none {
+    background-color: violet;
+    filter: brightness(0) opacity(1) drop-shadow(0 0 0 rgb(0, 0, 0));
 }
+
+.black-screen-one {
+    width: 194px;
+    height: 339px;
+    position: absolute;
+    z-index: 1;
+    top: 115px;
+    left: 123px;
+}
+
+.black-screen-two {
+    width: 339px;
+    height: 194px;
+    position: absolute;
+    top: 188px;
+    right: 199px;
+    z-index: 1;
+}
+
 
 .slider__phone {
     position: absolute;
@@ -157,22 +177,31 @@ a:hover {
     top: 53px;
     left: 112px;
 }
-.button-one{
+
+.button-one {
     /* border: 1px solid red; */
     position: absolute;
     left: 198px;
     top: 460px;
     z-index: 2;
 }
-.slider__button:hover{
+.slider__button{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+.slider__button:hover {
     cursor: pointer;
 }
-.button-two{
+
+.button-two {
     position: absolute;
     left: 433px;
     top: 260px;
     z-index: 2;
 }
+
 .phone-two {
     transform: rotate(90deg);
     top: 52px;
@@ -803,16 +832,17 @@ footer {
 .modal-submit>div {
     font-family: 'Lato-Light';
     margin-top: 10px;
-   
 }
-.added{
-     text-align: left;
-     word-wrap: break-word;
-     overflow: hidden;
-     text-overflow: ellipsis; 
-     max-height: 200px; 
+
+.added {
+    text-align: left;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 200px;
 }
-.bold{
+
+.bold {
     font-weight: bold;
 }
 
@@ -836,4 +866,3 @@ footer {
     transition: 0.2s;
     background-color: rgb(150, 0, 130);
 }
- 

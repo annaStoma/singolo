@@ -20,33 +20,36 @@
                 <h1 class="navigation__logo">singolo<span class="logo-star">*</span></h1>
                 <nav id="navigation" class="navigation__links">
                     <a href="#home"><span class="link-active" id="home_link">home</span></a>
-                    <a href="#services" ><span id="services_link">services</span></a>
-                    <a href="#portfolio" ><span id="portfolio_link">portfolio</span></a>
-                    <a href="#about" ><span id="about_link">about</span></a>
-                    <a href="#contact" ><span id="contact_link">contact</span></a>
+                    <a href="#services"><span id="services_link">services</span></a>
+                    <a href="#portfolio"><span id="portfolio_link">portfolio</span></a>
+                    <a href="#about"><span id="about_link">about</span></a>
+                    <a href="#contact"><span id="contact_link">contact</span></a>
                 </nav>
             </div>
         </header>
         <section class="slider" id='slider-section'>
             <div class="slider-content" id='slides'>
-                <div class="slide slide-1 showing">
-                    <img src="./assets/img/Screen1.png" class="slider__img img-one" id="slider__img-one">
+                <div class="black-screen-one black-screen" id='black-screen-one'></div>
+                <div class="black-screen-two black-screen" id="black-screen-two"></div>
+                <div class="slider__button button-one" id='button-one' onclick="delWallpaperOne()"></div>
+                <div class="slider__button button-two" id='button-two' onclick="delWallpaperTwo()"></div>
+                <!-- <img src="./assets/img/Screen1.png" class="slider__img img-one" id="slider__img-one">
                     <img src="./assets/img/Screen2.png" class="slider__img img-two" id="slider__img-two">
                     <img src="./assets/img/Home-Button.png" class="slider__button button-one" onclick="delWallpaperOne()">
                     <img src="./assets/img/Home-Button.png" class="slider__button button-two" onclick="delWallpaperTwo()">
                     <img src="./assets/img/Cam.png" class="slider__phone phone-one">
                     <img src="./assets/img/Shadow.png" class="slider__shadow shadow-one">
                     <img src="./assets/img/Cam.png" class="slider__phone phone-two">
-                    <img src="./assets/img/Shadow.png" class="slider__shadow shadow-two">
-                </div>
+                    <img src="./assets/img/Shadow.png" class="slider__shadow shadow-two"> -->
+                <img class="slide slide-1 black-screen-img" src="./assets/img/Slide-1.png">
 
-                <div class="slide blue">
-                    <img class="slide-2 blue" src="./assets/img/Slide-2.png">
-                </div>
+
+                <img class="slide slide-2" src="./assets/img/Slide-2.png">
+
 
                 <div class="arrows">
-                    <img src="./assets/img/svg/arrow-left.svg" class="slider__arrow arrow-left" onclick="slider()">
-                    <img src="./assets/img/svg/arrow-right.svg" onclick="slider()" class="slider__arrow arrow-right">
+                    <img src="./assets/img/svg/arrow-left.svg" class="slider__arrow arrow-left" onclick="left()">
+                    <img src="./assets/img/svg/arrow-right.svg" class="slider__arrow arrow-right" onclick="left()">
                 </div>
             </div>
         </section>
