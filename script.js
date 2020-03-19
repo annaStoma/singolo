@@ -131,14 +131,6 @@ const delWallpaperTwo = () => {
         PHONE_WALLPAPER_TWO.classList.add('none');
 }
 
-// portfolio navigation
-NAVIGATION.addEventListener('click', (event) => {
-    NAVIGATION.querySelectorAll('a').forEach(item => {
-        item.classList.remove('link-active');
-    });
-    event.target.classList.add('link-active');
-})
-
 // portfolio random image
 const PORTFOLIO_BUTTONS = document.getElementById('portfolio__buttons');
 const PORTFOLIO_IMAGES = document.getElementById('portfolio__images');

@@ -25,6 +25,9 @@ body {
 body:hover {
     cursor: default;
 }
+header:hover{
+    opacity: 1;
+}
 
 .content {
     margin: auto;
@@ -113,9 +116,9 @@ a:hover {
 /* ---------------------------------------------- */
 
 .slider {
-    height: 594px;
+    height: 600px;
     background-color: #f06c64;
-    border-bottom: 6px solid #ea676b;
+
     padding-top: 95px;
     user-select: none;
 }
@@ -156,11 +159,13 @@ a:hover {
 .slide-1 {
     background-color: #f06c64;
     position: absolute;
+    border-bottom: 6px solid #ea676b;
 }
 
 .slide-2 {
     background-color: #648BF0;
     position: absolute;
+    border-bottom: 6px solid rgb(83, 121, 216);
 }
 
 .slider__phone {
@@ -407,10 +412,6 @@ body {
     word-spacing: -2.6px;
 }
 
-.button-active {
-    color: #c5c5c5;
-    border-color: #c5c5c5;
-}
 
 .image:nth-child(n+13) {
     display: none;
@@ -431,6 +432,10 @@ body {
     border-radius: 3px;
     padding: 3px 6px 3px 6px;
     user-select: none;
+}
+.button-active {
+    color: #c5c5c5;
+    border-color: #c5c5c5;
 }
 
 .button:hover {
@@ -785,6 +790,9 @@ footer {
     height: 100%;
     background-color: rgb(0, 0, 0, 0.8);
     z-index: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .display-none {
@@ -800,11 +808,6 @@ footer {
     background-color: white;
     border-radius: 20px;
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -839,10 +842,10 @@ footer {
     width: 40px;
     height: 30px;
     color: white;
-    /* text-align: center; */
     border-radius: 3px;
     background-color: rgb(48, 28, 78);
 }
+
 
 .modal-button>button:hover {
     outline: none;
