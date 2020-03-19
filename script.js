@@ -38,15 +38,15 @@ window.addEventListener('scroll', () => {
     if (window.scrollY < SERVICES_SECTION.offsetTop - HOME_SECTION.offsetHeight) {
         removeLinkActive();
         document.getElementById('home_link').classList.add('link-active');
-        HOME_SECTION.style.opacity = "1";
-        HOME_SECTION.style.height = '89px';
+        document.getElementById('header').style.opacity = '1';
+        document.getElementById('header').style.height = '89px';
     }
     if (window.scrollY >= SERVICES_SECTION.offsetTop - HOME_SECTION.offsetHeight && window.scrollY < PORTFOLIO_SECTION.offsetTop - HOME_SECTION.offsetHeight) {
         removeLinkActive();
         document.getElementById('services_link').classList.add('link-active');
-        HOME_SECTION.style.opacity = "0.7";
-        HOME_SECTION.style.height = '50px';
-        HOME_SECTION.style.transition = '0.3s';
+        document.getElementById('header').style.opacity = '0.5';
+        document.getElementById('header').style.height = '50px';
+
     }
     if (window.scrollY >= PORTFOLIO_SECTION.offsetTop - HOME_SECTION.offsetHeight) {
         removeLinkActive();
@@ -64,79 +64,67 @@ window.addEventListener('scroll', () => {
         removeLinkActive();
         document.getElementById('contact_link').classList.add('link-active');
     }
+
 });
 
 // slider
-const SLIDES = document.querySelectorAll('.slide');
-let slider = [];
-for (let i = 0; i < SLIDES.length; i++) {
-    slider[i] = SLIDES[i].src;
-    SLIDES[i].remove();
+let items = document.querySelectorAll('.item');
+let currentItem = 0;
+let isEnabled = true;
+
+function changeCurrentItem(n) {
+    currentItem = (n + items.length) % items.length;
 }
-let step = 0;
-let offset = 0;
-const SLIDE_WIDTH = 1020;
-const draw = () => {
-    let img = document.createElement('img');
-    img.src = slider[step];
-    img.classList.add('slide');
-    img.style.left = offset * SLIDE_WIDTH + 'px';
-    document.querySelector('#slides').appendChild(img);
-    if (step == slider.length - 1) step = 0;
-    else step++;
-    offset = 1;
+
+function hideItem(direction) {
+    isEnabled = false;
+    items[currentItem].classList.add(direction);
+    items[currentItem].addEventListener('animationend', function() {
+        this.classList.remove('active', direction);
+    })
 }
-draw();
-draw();
 
-const PHONE_WALLPAPER_ONE = document.getElementById('black-screen-one');
-const PHONE_WALLPAPER_TWO = document.getElementById('black-screen-two');
-const PHONE_BUTTON__ONE = document.getElementById("button-one");
-const PHONE_BUTTON__TWO = document.getElementById("button-two");
-const SLIDER__SECTION = document.getElementById("slider-section");
+function showItem(direction) {
+    items[currentItem].classList.add('next', direction);
+    items[currentItem].addEventListener('animationend', function() {
+        this.classList.remove('next', direction);
+        this.classList.add('active');
+        isEnabled = true;
+    })
+}
 
+function previousItem(n) {
+    hideItem('to-right');
+    changeCurrentItem(n - 1);
+    showItem('from-left');
+}
 
-const left = () => {
-    document.onclick = null;
-    const SLIDES_2 = document.querySelectorAll('.slide');
-    console.log(SLIDES_2)
-    let offset_2 = 0;
-    for (let i = 0; i < SLIDES_2.length; i++) {
-
-        SLIDES_2[i].style.left = offset_2 * SLIDE_WIDTH - SLIDE_WIDTH + 'px';
-        offset_2++;
-        if (SLIDES_2[i].src !== "http://127.0.0.1:5500/assets/img/Slide-1.png") {
-            PHONE_WALLPAPER_ONE.style.opacity = "0";
-            PHONE_WALLPAPER_TWO.style.opacity = "0";
-            PHONE_BUTTON__ONE.style.pointerEvents = "none";
-            PHONE_BUTTON__TWO.style.pointerEvents = "none";
-            SLIDER__SECTION.style.backgroundColor = "#648bf0"
-            SLIDER__SECTION.style.borderBottomColor = "#456bcc"
-        } else {
-            PHONE_BUTTON__ONE.style.pointerEvents = "auto";
-            PHONE_BUTTON__TWO.style.pointerEvents = "auto";
-            SLIDER__SECTION.style.backgroundColor = "#f06c64";
-            SLIDER__SECTION.style.borderBottomColor = "#ea676b"
-        }
+function nextItem(n) {
+    hideItem('to-left');
+    changeCurrentItem(n + 1);
+    showItem('from-right');
+}
+document.querySelector('.arrow-left').addEventListener('click', function() {
+    if (isEnabled) {
+        previousItem(currentItem)
     }
-    setTimeout(() => {
-        SLIDES_2[0].remove();
-        draw();
-
-    }, 1000)
-}
+});
+document.querySelector('.arrow-right').addEventListener('click', function() {
+    if (isEnabled) {
+        nextItem(currentItem)
+    }
+});
 
 // lock phone
-
+const PHONE_WALLPAPER_ONE = document.getElementById('slider__img-one');
+const PHONE_WALLPAPER_TWO = document.getElementById('slider__img-two');
 const delWallpaperOne = () => {
-    PHONE_WALLPAPER_ONE.style.opacity = "1";
     if (PHONE_WALLPAPER_ONE.classList.contains('none'))
         PHONE_WALLPAPER_ONE.classList.remove('none')
     else
         PHONE_WALLPAPER_ONE.classList.add('none');
 }
 const delWallpaperTwo = () => {
-    PHONE_WALLPAPER_TWO.style.opacity = "1";
     if (PHONE_WALLPAPER_TWO.classList.contains('none'))
         PHONE_WALLPAPER_TWO.classList.remove('none')
     else
