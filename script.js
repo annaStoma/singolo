@@ -104,12 +104,12 @@ function nextItem(n) {
     changeCurrentItem(n + 1);
     showItem('from-right');
 }
-document.querySelector('.arrow-left').addEventListener('click', function() {
+document.querySelector('.arrow-right').addEventListener('click', function() {
     if (isEnabled) {
         previousItem(currentItem)
     }
 });
-document.querySelector('.arrow-right').addEventListener('click', function() {
+document.querySelector('.arrow-left').addEventListener('click', function() {
     if (isEnabled) {
         nextItem(currentItem)
     }
