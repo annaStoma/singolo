@@ -117,6 +117,7 @@ a:hover {
     background-color: #f06c64;
     border-bottom: 6px solid #ea676b;
     padding-top: 95px;
+    user-select: none;
 }
 
 .slider-content {
