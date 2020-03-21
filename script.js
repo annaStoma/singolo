@@ -1,3 +1,4 @@
+alert("Уважаемый проверяющий, если есть вопросы или сомнения, или какая-то 'странная' ошибка, то прошу связаться со мной (дискорд: Hanna Stoma (@annaStoma)) и оставить ваши контакты в комментарии, спасибо");
 // navigation active
 const NAVIGATION = document.getElementById('navigation');
 const HOME_SECTION = document.getElementById('header');
@@ -233,3 +234,20 @@ FORM.addEventListener('keydown', function(event) {
         event.preventDefault();
     }
 });
+
+// class Samurai {
+//     constructor(name){
+//         this.name = name;
+//     }
+//     hello() {console.log(this.name)}
+// }
+
+// let shogun = new Samurai('Name');
+// console.log(shogun.__proto__.__proto__ === Object.prototype);
+// console.log(shogun.__proto__.constructor.__proto__ === Function.prototype);
+// console.log(shogun.__proto__.__proto__.__proto__ === null);
+
+// class B{
+
+// }
+// console.log(B.prototype.__proto__ === Function.prototype) // false
