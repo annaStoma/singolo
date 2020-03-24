@@ -1,4 +1,4 @@
-alert("Уважаемый проверяющий, если есть вопросы или сомнения, или какая-то 'странная' ошибка, то прошу связаться со мной (дискорд: Hanna Stoma (@annaStoma)) и оставить ваши контакты в комментарии, спасибо");
+// alert("Уважаемый проверяющий, если есть вопросы или сомнения, или какая-то 'странная' ошибка, то прошу связаться со мной (дискорд: Hanna Stoma (@annaStoma)) и оставить ваши контакты в комментарии, спасибо");
 // navigation active
 const NAVIGATION = document.getElementById('navigation');
 const HOME_SECTION = document.getElementById('header');
