@@ -15,20 +15,29 @@
         </div>
     </section>
     <div class="content" id="home">
-        <header class="navigation" id="header">
-            <div class="navigation__content">
-                <h1 class="navigation__logo">singolo<span class="logo-star">*</span></h1>
-                <nav id="navigation" class="navigation__links">
-                    <a href="#home"><span class="link-active" id="home_link">home</span></a>
-                    <a href="#services"><span id="services_link">services</span></a>
-                    <a href="#portfolio"><span id="portfolio_link">portfolio</span></a>
-                    <a href="#about"><span id="about_link">about</span></a>
-                    <a href="#contact"><span id="contact_link">contact</span></a>
-                </nav>
-            </div>
-        </header>
+            <header class="navigation header">
+                <div class="navigation__content">
 
+                    <h1 class="navigation__logo" id="logo">
 
+                        <span class="hamburger" id="hamburger">
+                    <span class="hamburger__line"></span>
+                        </span>
+
+                        singolo<span class="logo-star">*</span></h1>
+
+                    <nav id="navigation" class="navigation__links">
+                        <div class="links-burger">
+                            <a href="#home"><span class="link-active" id="home_link">home</span></a>
+                            <a href="#services"><span id="services_link">services</span></a>
+                            <a href="#portfolio"><span id="portfolio_link">portfolio</span></a>
+                            <a href="#about"><span id="about_link">about</span></a>
+                            <a href="#contact"><span id="contact_link">contact</span></a>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+            <div id="content-burger"></div>
         <section class="slider carousel">
 
             <div class="slider-content item-container">
@@ -66,35 +75,47 @@
                 <div class="our-services__title">Our Services</div>
                 <p class="our-services__text">Fusce dapibus, tellus /ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
                 <div class="our-services__service">
-                    <div class="service service-design">
-                        <img class="service-icon" src="./assets/img/pen.png">
-                        <p class="service-title">Custom Design</p>
-                        <p class="service-text">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
+                    <div class="service-item">
+                        <div class="service service-design">
+                            <img class="service-icon" src="./assets/img/pen.png">
+                            <p class="service-title">Custom Design</p>
+                            <p class="service-text">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
+                        </div>
                     </div>
-                    <div class="service service-ideas">
-                        <img class="service-icon" src="./assets/img/bulb.png">
-                        <p class="service-title">Inovative Ideas</p>
-                        <p class="service-text">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
+                    <div class="service-item">
+                        <div class="service service-ideas">
+                            <img class="service-icon" src="./assets/img/bulb.png">
+                            <p class="service-title">Inovative Ideas</p>
+                            <p class="service-text">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
+                        </div>
                     </div>
-                    <div class="service service-love">
-                        <img class="service-icon" src="./assets/img/heart.png">
-                        <p class="service-title">Love Is The Answer</p>
-                        <p class="service-text">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</p>
+                    <div class="service-item">
+                        <div class="service service-love">
+                            <img class="service-icon" src="./assets/img/heart.png">
+                            <p class="service-title">Love Is The Answer</p>
+                            <p class="service-text">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</p>
+                        </div>
                     </div>
-                    <div class="service service-responsive">
-                        <img class="service-icon" src="./assets/img/phone.png">
-                        <p class="service-title">Responsive Layout</p>
-                        <p class="service-text">Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula. Praesent elit leo.</p>
+                    <div class="service-item">
+                        <div class="service service-responsive">
+                            <img class="service-icon" src="./assets/img/phone.png">
+                            <p class="service-title">Responsive Layout</p>
+                            <p class="service-text">Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula. Praesent elit leo.</p>
+                        </div>
                     </div>
-                    <div class="service service-support">
-                        <img class="service-icon" src="./assets/img/bubble.png">
-                        <p class="service-title">24/ 7 Support</p>
-                        <p class="service-text">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat. Pellentesque egestas venenatis lorem .</p>
+                    <div class="service-item">
+                        <div class="service service-support">
+                            <img class="service-icon" src="./assets/img/bubble.png">
+                            <p class="service-title">24/ 7 Support</p>
+                            <p class="service-text">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat. Pellentesque egestas venenatis lorem .</p>
+                        </div>
                     </div>
-                    <div class="service service-star">
-                        <img class="service-icon" src="./assets/img/star.png">
-                        <p class="service-title">Feel Like A Star</p>
-                        <p class="service-text">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.</p>
+                    <div class="service-item">
+                        <div class="service service-star">
+                            <img class="service-icon" src="./assets/img/star.png">
+                            <p class="service-title">Feel Like A Star</p>
+                            <p class="service-text">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.</p>
+                        </div>
                     </div>
                 </div>
             </div>

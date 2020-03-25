@@ -1,7 +1,7 @@
 // alert("Уважаемый проверяющий, если есть вопросы или сомнения, или какая-то 'странная' ошибка, то прошу связаться со мной (дискорд: Hanna Stoma (@annaStoma)) и оставить ваши контакты в комментарии, спасибо");
 // navigation active
 const NAVIGATION = document.getElementById('navigation');
-const HOME_SECTION = document.getElementById('header');
+const HOME_SECTION = document.querySelector('header');
 const SERVICES_SECTION = document.getElementById('services');
 const PORTFOLIO_SECTION = document.getElementById('portfolio');
 const ABOUT_SECTION = document.getElementById('about');
@@ -39,14 +39,14 @@ window.addEventListener('scroll', () => {
     if (window.scrollY < SERVICES_SECTION.offsetTop - HOME_SECTION.offsetHeight) {
         removeLinkActive();
         document.getElementById('home_link').classList.add('link-active');
-        document.getElementById('header').style.opacity = '1';
-        document.getElementById('header').style.height = '89px';
+        // document.getElementById('header').style.opacity = '1';
+        // document.getElementById('header').style.height = '89px';
     }
     if (window.scrollY >= SERVICES_SECTION.offsetTop - HOME_SECTION.offsetHeight && window.scrollY < PORTFOLIO_SECTION.offsetTop - HOME_SECTION.offsetHeight) {
         removeLinkActive();
         document.getElementById('services_link').classList.add('link-active');
-        document.getElementById('header').style.opacity = '0.5';
-        document.getElementById('header').style.height = '50px';
+        // document.getElementById('header').style.opacity = '0.5';
+        // document.getElementById('header').style.height = '50px';
 
     }
     if (window.scrollY >= PORTFOLIO_SECTION.offsetTop - HOME_SECTION.offsetHeight) {
@@ -234,6 +234,32 @@ FORM.addEventListener('keydown', function(event) {
         event.preventDefault();
     }
 });
+
+
+
+const HAMBURGER = document.getElementById('hamburger');
+const LOGO = document.getElementById('logo');
+const NAV_CONTENT = document.getElementsByClassName('navigation__content')[0];
+const LINKS = document.getElementsByClassName('links-burger')[0];
+const SHADOW = document.getElementById('content-burger');
+
+HAMBURGER.addEventListener('click', () => {
+    if (HAMBURGER.classList.contains('hamburger-transform')) {
+        NAV_CONTENT.removeAttribute("id");
+        LINKS.removeAttribute("id");
+        HAMBURGER.classList.remove('hamburger-transform');
+        HOME_SECTION.removeAttribute("id");
+        LOGO.classList.remove('navigation__logo-burger');
+        SHADOW.classList.remove('content-burger');
+    } else {
+        NAV_CONTENT.id = 'navigation__content-burger';
+        LINKS.id = 'links-burger';
+        HAMBURGER.classList.add('hamburger-transform');
+        HOME_SECTION.id = 'navigation-burger';
+        LOGO.classList.add('navigation__logo-burger');
+        SHADOW.classList.add('content-burger');
+    }
+})
 
 // class Samurai {
 //     constructor(name){
