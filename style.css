@@ -991,6 +991,10 @@ footer {
         margin-top: 20px;
         justify-content: space-around;
     }
+    
+    .image:nth-child(n+9) {
+        display: none;
+    }
     .portfolio__images .image {
         width: 47%;
         padding: 3px;
@@ -1147,6 +1151,7 @@ footer {
 }
 
 @media (min-width: 768px) and (max-width: 1020px) {
+
     .about-cards {
         flex-wrap: nowrap;
     }
