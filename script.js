@@ -105,12 +105,12 @@ function nextItem(n) {
     changeCurrentItem(n + 1);
     showItem('from-right');
 }
-document.querySelector('.arrow-right').addEventListener('click', function() {
+document.querySelector('.arrow-left').addEventListener('click', function() {
     if (isEnabled) {
         previousItem(currentItem)
     }
 });
-document.querySelector('.arrow-left').addEventListener('click', function() {
+document.querySelector('.arrow-right').addEventListener('click', function() {
     if (isEnabled) {
         nextItem(currentItem)
     }
@@ -148,10 +148,10 @@ const randomImages = (event) => {
         let srcArray = [];
         let counter = 0;
         PORTFOLIO_IMAGES.querySelectorAll('img').forEach(item => {
-            srcArray.push(item.src);
+            srcArray.push(item);
             counter++;
-            item.src = '';
         })
+        PORTFOLIO_IMAGES.innerHTML = '';
 
         function random(size) {
             let array = new Array(size).fill(0).map((item, i) => i);
@@ -164,11 +164,13 @@ const randomImages = (event) => {
             return array;
         }
         let randArray = random(counter);
-        console.log(randArray)
-        PORTFOLIO_IMAGES.querySelectorAll('img').forEach((item, index) => {
-            item.src = srcArray[randArray[index]];
+        // console.log(randArray)
+
+        srcArray.forEach((item, index) => {
+            PORTFOLIO_IMAGES.appendChild(srcArray[randArray[index]]);
             item.style.boxShadow = "none";
         })
+
     }
 }
 
@@ -243,7 +245,7 @@ const NAV_CONTENT = document.getElementsByClassName('navigation__content')[0];
 const LINKS = document.getElementsByClassName('links-burger')[0];
 const SHADOW = document.getElementById('content-burger');
 
-HAMBURGER.addEventListener('click', () => {
+const closeMenu = () => {
     if (HAMBURGER.classList.contains('hamburger-transform')) {
         NAV_CONTENT.removeAttribute("id");
         LINKS.removeAttribute("id");
@@ -259,7 +261,10 @@ HAMBURGER.addEventListener('click', () => {
         LOGO.classList.add('navigation__logo-burger');
         SHADOW.classList.add('content-burger');
     }
-})
+}
+
+
+
 
 // class Samurai {
 //     constructor(name){

@@ -20,7 +20,7 @@
 
                     <h1 class="navigation__logo" id="logo">
 
-                        <span class="hamburger" id="hamburger">
+                        <span class="hamburger" id="hamburger" onclick="closeMenu()">
                     <span class="hamburger__line"></span>
                         </span>
 
@@ -28,16 +28,16 @@
 
                     <nav id="navigation" class="navigation__links">
                         <div class="links-burger">
-                            <a href="#home"><span class="link-active" id="home_link">home</span></a>
-                            <a href="#services"><span id="services_link">services</span></a>
-                            <a href="#portfolio"><span id="portfolio_link">portfolio</span></a>
-                            <a href="#about"><span id="about_link">about</span></a>
-                            <a href="#contact"><span id="contact_link">contact</span></a>
+                            <a href="#home" onclick="closeMenu()"><span class="link-active" id="home_link">home</span></a>
+                            <a href="#services" onclick="closeMenu()"><span id="services_link">services</span></a>
+                            <a href="#portfolio" onclick="closeMenu()"><span id="portfolio_link">portfolio</span></a>
+                            <a href="#about" onclick="closeMenu()"><span id="about_link">about</span></a>
+                            <a href="#contact" onclick="closeMenu()"><span id="contact_link">contact</span></a>
                         </div>
                     </nav>
                 </div>
             </header>
-            <div id="content-burger"></div>
+            <div id="content-burger" onclick="closeMenu()"></div>
         <section class="slider carousel">
 
             <div class="slider-content item-container">
