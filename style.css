@@ -33,6 +33,14 @@ header:hover {
 .content {
     margin: auto;
 }
+.black-line{
+    background-color: #2d303a;
+    height: 95px;
+    top: 0;
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+}
 
 .navigation {
     height: 89px;
@@ -1094,12 +1102,12 @@ footer {
     }
     /* --------------------------------- */
     .hamburger-transform {
-        margin-top: -12px;
+        margin-top: -2px;
         transform: rotate(90deg);
     }
     #navigation-burger {
         display: flex;
-        width: 75%;
+        width: 278px;
         height: 100%;
         box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
     }
