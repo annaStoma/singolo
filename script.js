@@ -9,7 +9,7 @@ const ABOUT_SECTION = document.getElementById('about');
 const CONTACTS_SECTION = document.getElementById('contact');
 
 const removeLinkActive = () => {
-    NAVIGATION.querySelectorAll('span').forEach(item => {
+    NAVIGATION.querySelectorAll('a span').forEach(item => {
         item.classList.remove('link-active');
     });
 }
@@ -37,18 +37,13 @@ for (let anchor of ANCHORS) {
 
 // change active link with scrolling
 window.addEventListener('scroll', () => {
-    if (window.scrollY == 0) {
+    if (window.scrollY >= SERVICES_SECTION.offsetTop - HOME_SECTION.offsetHeight && window.scrollY < PORTFOLIO_SECTION.offsetTop - HOME_SECTION.offsetHeight) {
         removeLinkActive();
-        alert("sdfs")
-        document.getElementById('home_link').classList.add('link-active');
+        document.getElementById('services_link').classList.add('link-active');
     }
     if (window.scrollY < SERVICES_SECTION.offsetTop - HOME_SECTION.offsetHeight || window.scrollY == 0) {
         removeLinkActive();
         document.getElementById('home_link').classList.add('link-active');
-    }
-    if (window.scrollY >= SERVICES_SECTION.offsetTop - HOME_SECTION.offsetHeight && window.scrollY < PORTFOLIO_SECTION.offsetTop - HOME_SECTION.offsetHeight) {
-        removeLinkActive();
-        document.getElementById('services_link').classList.add('link-active');
     }
     if (window.scrollY >= PORTFOLIO_SECTION.offsetTop - HOME_SECTION.offsetHeight) {
         removeLinkActive();
