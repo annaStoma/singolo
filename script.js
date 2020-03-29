@@ -1,4 +1,5 @@
 // alert("Уважаемый проверяющий, если есть вопросы или сомнения, или какая-то 'странная' ошибка, то прошу связаться со мной (дискорд: Hanna Stoma (@annaStoma)) и оставить ваши контакты в комментарии, спасибо");
+
 // navigation active
 const NAVIGATION = document.getElementById('navigation');
 const HOME_SECTION = document.querySelector('header');
@@ -36,18 +37,18 @@ for (let anchor of ANCHORS) {
 
 // change active link with scrolling
 window.addEventListener('scroll', () => {
-    if (window.scrollY < SERVICES_SECTION.offsetTop - HOME_SECTION.offsetHeight) {
+    if (window.scrollY == 0) {
+        removeLinkActive();
+        alert("sdfs")
+        document.getElementById('home_link').classList.add('link-active');
+    }
+    if (window.scrollY < SERVICES_SECTION.offsetTop - HOME_SECTION.offsetHeight || window.scrollY == 0) {
         removeLinkActive();
         document.getElementById('home_link').classList.add('link-active');
-        // document.getElementById('header').style.opacity = '1';
-        // document.getElementById('header').style.height = '89px';
     }
     if (window.scrollY >= SERVICES_SECTION.offsetTop - HOME_SECTION.offsetHeight && window.scrollY < PORTFOLIO_SECTION.offsetTop - HOME_SECTION.offsetHeight) {
         removeLinkActive();
         document.getElementById('services_link').classList.add('link-active');
-        // document.getElementById('header').style.opacity = '0.5';
-        // document.getElementById('header').style.height = '50px';
-
     }
     if (window.scrollY >= PORTFOLIO_SECTION.offsetTop - HOME_SECTION.offsetHeight) {
         removeLinkActive();
@@ -65,7 +66,6 @@ window.addEventListener('scroll', () => {
         removeLinkActive();
         document.getElementById('contact_link').classList.add('link-active');
     }
-
 });
 
 // slider
@@ -164,8 +164,6 @@ const randomImages = (event) => {
             return array;
         }
         let randArray = random(counter);
-        // console.log(randArray)
-
         srcArray.forEach((item, index) => {
             PORTFOLIO_IMAGES.appendChild(srcArray[randArray[index]]);
             item.style.boxShadow = "none";
@@ -262,23 +260,3 @@ const closeMenu = () => {
         SHADOW.classList.add('content-burger');
     }
 }
-
-
-
-
-// class Samurai {
-//     constructor(name){
-//         this.name = name;
-//     }
-//     hello() {console.log(this.name)}
-// }
-
-// let shogun = new Samurai('Name');
-// console.log(shogun.__proto__.__proto__ === Object.prototype);
-// console.log(shogun.__proto__.constructor.__proto__ === Function.prototype);
-// console.log(shogun.__proto__.__proto__.__proto__ === null);
-
-// class B{
-
-// }
-// console.log(B.prototype.__proto__ === Function.prototype) // false

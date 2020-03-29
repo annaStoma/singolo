@@ -33,9 +33,10 @@ header:hover {
 .content {
     margin: auto;
 }
-.black-line{
+
+.black-line {
     background-color: #2d303a;
-    height: 95px;
+    height: 90px;
     top: 0;
     z-index: 9;
     position: fixed;
@@ -43,7 +44,7 @@ header:hover {
 }
 
 .navigation {
-    height: 89px;
+    height: 90px;
     margin: auto;
     position: fixed;
     width: 100%;
@@ -56,7 +57,7 @@ header:hover {
 .navigation__content {
     margin: auto;
     max-width: 1020px;
-    height: inherit;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -284,6 +285,7 @@ a:hover {
     right: 5%;
 }
 
+
 /* ---------------------------------------------- */
 
 p {
@@ -308,7 +310,7 @@ p {
     align-items: center;
     padding-left: 3.9%;
     padding-right: 3.9%;
-    padding-bottom: 4.8%;
+    padding-bottom: 3.9%;
 }
 
 .our-services__title {
@@ -423,7 +425,7 @@ body {
 .portfolio__title {
     font-family: 'Lato-Black';
     font-size: 30px;
-    padding-left: 3.9%;;
+    padding-left: 3.9%;
     margin-top: 60px;
     letter-spacing: 0.16px;
 }
@@ -479,12 +481,25 @@ body {
     padding-right: 3.9%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    margin-top: 20px;
 }
 
 .image {
-    margin-top: 20px;
-    width: 23.5%;
+    margin: 8.7px;
+    /* width: 100%; */
+    /* flex: 1 0 20%; */
+    /* margin: 7px; */
+    /* width: 100%; */
+    flex: 1 0 30%;
+    /* max-width: 220px; */
+    max-height: auto;
+}
+
+#portfolio__images .image::before {
+    content: "";
+    float: left;
+    /* padding-top: 10px; */
 }
 
 .about {
@@ -505,8 +520,6 @@ body {
 
 .about__title {
     padding-left: 3.9%;
-
-
     margin-top: 60px;
     letter-spacing: -0.2px;
 }
@@ -981,6 +994,21 @@ footer {
 }
 
 @media only screen and (max-width: 767px) {
+    .our-services__text {
+       padding: 0px 25px;
+    }
+    .black-line {
+        height: 11%;
+    }
+    .navigation {
+        height: 10%;
+    }
+    .slider {
+        padding-top: 72px;
+    }
+    .slide-2 img {
+        padding-bottom: 3.5%;
+    }
     .our-services__title {
         width: 92%;
     }
@@ -988,35 +1016,70 @@ footer {
         padding-left: 3.9%;
     }
     #portfolio__images {
-        margin-top: 20px;
+        margin-top: 15px;
         justify-content: space-around;
+        /* margin-top: 32px; */
+        padding-left: 0;
+        padding-right: 0;
+        /* margin-bottom: 10px; */
     }
-    
     .image:nth-child(n+9) {
         display: none;
     }
+    .portfolio__content {
+        width: 90%;
+        padding-bottom: 16px;
+    }
+    .portfolio__text {
+        line-height: 1.65;
+    }
+    .portfolio__title {
+        margin-top: 12%;
+    }
     .portfolio__images .image {
-        width: 47%;
-        padding: 3px;
-        margin-top: 6px;
+        width: calc((100% - 60px) / 2);
+    }
+    .button {
+        padding: 3px 5px;
+        margin-right: 14px;
+        /* margin-top: 10px; */
+    }
+ 
+    .service{
+        margin-top: 15px;
     }
     .our-services__service {
         justify-content: center;
         flex-wrap: wrap;
+        margin-top: 20px;
+        /* padding-bottom: 25px; */
     }
     .service-item {
         width: 100%;
         display: flex;
         justify-content: center;
+        height: 119px;
     }
     .about-cards {
         flex-wrap: wrap;
+        margin-top: 54px;
+        /* padding-bottom: 10px; */
+    }
+    .about__content {
+        padding: 15px;
+    }
+    .about__title {
+        margin-top: 20px;
     }
     .card {
         padding-bottom: 30px;
         width: 100%;
         max-width: none;
         margin: auto;
+        /* padding: 15px; */
+    }
+    .quote {
+        padding: 8px;
     }
     .contacts {
         margin-bottom: 45px;
@@ -1026,14 +1089,17 @@ footer {
     .submit {
         width: 100%;
     }
+    .quote-title {
+        padding-top: 37px;
+    }
     .quote-text {
         width: 88%;
         margin: auto;
         margin-top: 20px;
     }
-    
     .get-quote-form {
         width: 100%;
+        /* padding-top: 50px; */
     }
     .form-contacts-wrapper {
         margin: auto;
@@ -1150,13 +1216,26 @@ footer {
     /* --------------------------------- */
 }
 
-@media (min-width: 768px) and (max-width: 1020px) {
-
+@media (min-width: 768px) and (max-width: 1019px) {
+    /* .black-line {
+        height: %;
+    }
+    .navigation {
+        height: 10%;
+    } */
     .about-cards {
         flex-wrap: nowrap;
     }
     .card {
         padding: 10px;
+    }
+    .slide-2 img {
+        padding-top: 4.7%;
+        padding-bottom: 3%;
+        
+    }
+    #portfolio__images {
+        margin-top: 25px;
     }
     .form-contacts-wrapper {
         flex-wrap: nowrap;
@@ -1171,6 +1250,30 @@ footer {
     .image {
         min-width: 218.55px;
         width: 30%;
+    }
+    .our-services__service {
+        justify-content: space-around;
+    }
+}
+
+@media(min-width: 1020px) {
+    .portfolio__images {
+        padding-left: 3.9%;
+        padding-right: 3.9%;
+        display: flex;
+        flex-wrap: wrap;
+        /* justify-content: space-between; */
+        margin-top: 20px;
+    }
+    .image {
+        margin: 7px;
+        /* width: 100%; */
+        /* flex: 1 0 20%; */
+        /* margin: 7px; */
+        /* width: 100%; */
+        /* flex: 1 0 20%; */
+        max-width: 220px;
+        max-height: auto;
     }
 }
 
