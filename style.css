@@ -481,25 +481,19 @@ body {
     padding-right: 3.9%;
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
     margin-top: 20px;
 }
 
 .image {
     margin: 8.7px;
-    /* width: 100%; */
-    /* flex: 1 0 20%; */
-    /* margin: 7px; */
-    /* width: 100%; */
     flex: 1 0 30%;
-    /* max-width: 220px; */
     max-height: auto;
+    cursor: pointer;
 }
 
 #portfolio__images .image::before {
     content: "";
     float: left;
-    /* padding-top: 10px; */
 }
 
 .about {
@@ -914,24 +908,6 @@ footer {
 
 /* ----------------- slider --------------- */
 
-@keyframes left {
-    from {
-        left: 0;
-    }
-    to {
-        left: -100%;
-    }
-}
-
-@keyframes right {
-    from {
-        left: 100%;
-    }
-    to {
-        left: 0;
-    }
-}
-
 .item {
     display: none;
     margin: 0 auto;
@@ -995,13 +971,16 @@ footer {
 
 @media only screen and (max-width: 767px) {
     .our-services__text {
-       padding: 0px 25px;
+        padding: 0px 25px;
     }
     .black-line {
-        height: 11%;
+        height: 71px;
     }
     .navigation {
-        height: 10%;
+        height: 71px;
+    }
+    #logo {
+        font-size: 22px;
     }
     .slider {
         padding-top: 72px;
@@ -1018,10 +997,8 @@ footer {
     #portfolio__images {
         margin-top: 15px;
         justify-content: space-around;
-        /* margin-top: 32px; */
         padding-left: 0;
         padding-right: 0;
-        /* margin-bottom: 10px; */
     }
     .image:nth-child(n+9) {
         display: none;
@@ -1042,17 +1019,14 @@ footer {
     .button {
         padding: 3px 5px;
         margin-right: 14px;
-        /* margin-top: 10px; */
     }
- 
-    .service{
+    .service {
         margin-top: 15px;
     }
     .our-services__service {
         justify-content: center;
         flex-wrap: wrap;
         margin-top: 20px;
-        /* padding-bottom: 25px; */
     }
     .service-item {
         width: 100%;
@@ -1063,7 +1037,6 @@ footer {
     .about-cards {
         flex-wrap: wrap;
         margin-top: 54px;
-        /* padding-bottom: 10px; */
     }
     .about__content {
         padding: 15px;
@@ -1076,7 +1049,6 @@ footer {
         width: 100%;
         max-width: none;
         margin: auto;
-        /* padding: 15px; */
     }
     .quote {
         padding: 8px;
@@ -1099,7 +1071,6 @@ footer {
     }
     .get-quote-form {
         width: 100%;
-        /* padding-top: 50px; */
     }
     .form-contacts-wrapper {
         margin: auto;
@@ -1130,7 +1101,7 @@ footer {
         height: 20px;
         left: 30px;
         display: inline-block;
-        margin-top: 5px;
+        margin-top: 2px;
     }
     .hamburger:hover {
         cursor: pointer;
@@ -1186,7 +1157,7 @@ footer {
         justify-content: flex-start;
         width: 80%;
         padding-left: 50px;
-        margin-top: 35px;
+        margin-top: 30px;
     }
     #navigation__content-burger {
         flex-direction: column;
@@ -1217,12 +1188,6 @@ footer {
 }
 
 @media (min-width: 768px) and (max-width: 1019px) {
-    /* .black-line {
-        height: %;
-    }
-    .navigation {
-        height: 10%;
-    } */
     .about-cards {
         flex-wrap: nowrap;
     }
@@ -1232,7 +1197,6 @@ footer {
     .slide-2 img {
         padding-top: 4.7%;
         padding-bottom: 3%;
-        
     }
     #portfolio__images {
         margin-top: 25px;
@@ -1254,6 +1218,9 @@ footer {
     .our-services__service {
         justify-content: space-around;
     }
+    .quote__content {
+        padding-bottom: 20px;
+    }
 }
 
 @media(min-width: 1020px) {
@@ -1262,22 +1229,34 @@ footer {
         padding-right: 3.9%;
         display: flex;
         flex-wrap: wrap;
-        /* justify-content: space-between; */
         margin-top: 20px;
     }
     .image {
         margin: 7px;
-        /* width: 100%; */
-        /* flex: 1 0 20%; */
-        /* margin: 7px; */
-        /* width: 100%; */
-        /* flex: 1 0 20%; */
         max-width: 220px;
         max-height: auto;
     }
 }
 
 @keyframes slidein {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes left {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes right {
     from {
         left: 100%;
     }
